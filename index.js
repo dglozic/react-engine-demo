@@ -21,6 +21,7 @@ require('node-jsx').install();
 var path = require('path');
 var express = require('express');
 var renderer = require('react-engine');
+var compress = require("compression");
 
 var app = express();
 
@@ -43,6 +44,8 @@ app.set('view engine', 'jsx');
 // finally, set the custom view
 app.set('view', renderer.expressView);
 
+app.use(compress());
+
 //expose public folder as static assets
 app.use(express.static(__dirname + '/public'));
 
@@ -63,10 +66,12 @@ app.get('/page2', function(req, res) {
 });
 
 app.get('/spa*', function(req, res) {
-  res.render('spa', {
+  console.log('Rending on the server: '+req.url);
+  res.render(req.url, {
     title: 'SPA - React Engine Demo',
     name: 'React SPA',
-    selection: 'header-spa'
+    selection: 'header-spa',
+    navSelection: 'nav-section1'
   });
 });
 

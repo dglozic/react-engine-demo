@@ -2,6 +2,7 @@
 'use strict';
 
 var React = require('react');
+var Link = require('react-router').Link;
 
 module.exports = React.createClass({
 
@@ -16,14 +17,14 @@ module.exports = React.createClass({
         <div className='left-nav-title'>{this.props.name}</div>
         <nav className='left-nav-links'>
           <ul>
-            <li className={this.props.selection=='nav-section1'?linkClassSelected:linkClass} id='nav-section1'>
-              <a href='/spa/section1'>Section 1</a>
+            <li className={this.props.navSelection=='nav-section1'?linkClassSelected:linkClass} id='nav-section1'>
+              <Link to='section1' activeClassName='left-nav-selected'>Section 1</Link>
             </li>
-            <li className={this.props.selection=='nav-section2'?linkClassSelected:linkClass} id='nav-section2'>
-              <a href='/spa/section2'>Section 2</a>
+            <li className={this.props.navSelection=='nav-section2'?linkClassSelected:linkClass} id='nav-section2'>
+              <Link to='section2' activeClassName='left-nav-selected'>Section 2</Link>
             </li>
-            <li className={this.props.selection=='nav-section3'?linkClassSelected:linkClass} id='nav-section3'>
-              <a href='/spa/section3'>Section 3</a>
+            <li className={this.props.navSelection=='nav-section3'?linkClassSelected:linkClass} id='nav-section3'>
+              <Link to='section3' activeClassName='left-nav-selected'>Section 3</Link>
             </li>            
           </ul>
         </nav>

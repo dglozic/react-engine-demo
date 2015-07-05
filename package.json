@@ -13,6 +13,7 @@
     "react-engine": "^1.3.0",
     "react-router": "^0.12.4",
     "reactify": "^1.1.0",
-    "require-globify": "^1.1.0"
+    "require-globify": "^1.1.0",
+    "compression": "1.5.0"
   }
 }

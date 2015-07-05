@@ -7,8 +7,7 @@ body {
 	font-size: 100%;
 	vertical-align: baseline;
 	line-height: normal;
-	font-family: HelveticaNeue, "Helvetica Neue", HelveticaNeueRoman, HelveticaNeue-Roman, "Helvetica Neue Roman", 
-									TeXGyreHerosRegular, Helvetica, Tahoma, Geneva, Arial, sans-serif;
+	font-family: HelveticaNeue-Light,"Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
 	font-weight: 300;
 }
 
@@ -122,7 +121,11 @@ li.header-link a, .header-link a:visited {
 	color: black;
 }
 
-.left-nav-link.left-nav-selected {
+.left-nav-link a.left-nav-selected {
+	border-left: solid 4px rgb(123, 179, 242);
+	padding-left: 26px;
+	color: black;
+	background-color: white;
 }
 
 .main-content {
@@ -130,11 +133,6 @@ li.header-link a, .header-link a:visited {
 	padding: 10px;
 }
 
-.spa-router {
-	padding-top: 50px;
-	padding-left: 280px;
-}
-
 .spa-section {
-
+	padding-left: 280px;
 }

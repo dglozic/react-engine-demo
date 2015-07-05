@@ -28249,21 +28249,23 @@ var React = require('react');
 var Router = require('react-router');
 var Route = Router.Route;
 
-
+var SPA = require('./views/spa.jsx');
+var Nav = require('./views/nav.jsx');
 var Section1 = require('./views/section1.jsx');
 var Section2 = require('./views/section2.jsx');
 var Section3 = require('./views/section3.jsx');
 
 var routes = module.exports = (
-  React.createElement(Route, {path: "/spa/", handler: Section1}, 
+  React.createElement(Route, {path: "/spa", handler: Nav}, 
     React.createElement(Route, {name: "section1", handler: Section1}), 
     React.createElement(Route, {name: "section2", handler: Section2}), 
-    React.createElement(Route, {name: "section3", handler: Section3})
+    React.createElement(Route, {name: "section3", handler: Section3}), 
+	React.createElement(Router.DefaultRoute, {handler: Section1})
   )
 );
 
 
-},{"./views/section1.jsx":277,"./views/section2.jsx":278,"./views/section3.jsx":279,"react":269,"react-router":110}],272:[function(require,module,exports){
+},{"./views/nav.jsx":275,"./views/section1.jsx":277,"./views/section2.jsx":278,"./views/section3.jsx":279,"./views/spa.jsx":280,"react":269,"react-router":110}],272:[function(require,module,exports){
 
 'use strict';
 
@@ -28358,6 +28360,7 @@ module.exports = React.createClass({displayName: "exports",
 'use strict';
 
 var React = require('react');
+var Link = require('react-router').Link;
 
 module.exports = React.createClass({
 
@@ -28372,14 +28375,14 @@ module.exports = React.createClass({
         React.createElement("div", {className: "left-nav-title"}, this.props.name), 
         React.createElement("nav", {className: "left-nav-links"}, 
           React.createElement("ul", null, 
-            React.createElement("li", {className: this.props.selection=='nav-section1'?linkClassSelected:linkClass, id: "nav-section1"}, 
-              React.createElement("a", {href: "/spa/section1"}, "Section 1")
+            React.createElement("li", {className: this.props.navSelection=='nav-section1'?linkClassSelected:linkClass, id: "nav-section1"}, 
+              React.createElement(Link, {to: "section1", activeClassName: "left-nav-selected"}, "Section 1")
             ), 
-            React.createElement("li", {className: this.props.selection=='nav-section2'?linkClassSelected:linkClass, id: "nav-section2"}, 
-              React.createElement("a", {href: "/spa/section2"}, "Section 2")
+            React.createElement("li", {className: this.props.navSelection=='nav-section2'?linkClassSelected:linkClass, id: "nav-section2"}, 
+              React.createElement(Link, {to: "section2", activeClassName: "left-nav-selected"}, "Section 2")
             ), 
-            React.createElement("li", {className: this.props.selection=='nav-section3'?linkClassSelected:linkClass, id: "nav-section3"}, 
-              React.createElement("a", {href: "/spa/section3"}, "Section 3")
+            React.createElement("li", {className: this.props.navSelection=='nav-section3'?linkClassSelected:linkClass, id: "nav-section3"}, 
+              React.createElement(Link, {to: "section3", activeClassName: "left-nav-selected"}, "Section 3")
             )
           )
         )
@@ -28389,7 +28392,7 @@ module.exports = React.createClass({
 });
 
 
-},{"react":269}],276:[function(require,module,exports){
+},{"react":269,"react-router":110}],276:[function(require,module,exports){
 
 'use strict';
 
