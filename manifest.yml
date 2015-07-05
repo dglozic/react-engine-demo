@@ -1,0 +1,9 @@
+---
+applications:
+- name: React Engine Demo
+  host: react-engine-demo
+  domain: mybluemix.net
+  memory: 256M
+  instances: 1
+  path: .
+  command: node index.js
