@@ -66,12 +66,10 @@ app.get('/page2', function(req, res) {
 });
 
 app.get('/spa*', function(req, res) {
-  console.log('Rending on the server: '+req.url);
   res.render(req.url, {
     title: 'SPA - React Engine Demo',
     name: 'React SPA',
-    selection: 'header-spa',
-    navSelection: 'nav-section1'
+    selection: 'header-spa'
   });
 });
 

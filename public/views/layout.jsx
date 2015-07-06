@@ -7,6 +7,10 @@ var Header = require('./header.jsx');
 module.exports = React.createClass({
 
   render: function render() {
+    var bundle;
+
+    if (this.props.addBundle)
+      bundle = <script src='/bundle.js'/>;
 
     return (
       <html>
@@ -23,7 +27,7 @@ module.exports = React.createClass({
              {this.props.children}
           </div>
         </body>
-        <script src='/bundle.js'></script>
+        {bundle}
       </html>
     );
   }

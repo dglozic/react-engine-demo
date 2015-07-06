@@ -23,7 +23,7 @@ module.exports = React.createClass({
               <a href='/page2'>Page 2</a>
             </li>
             <li className={this.props.selection=='header-spa'?linkClassSelected:linkClass} id='header-spa'>
-              <a href='/spa'>React SPA</a>
+              <a href='/spa/section1'>React SPA</a>
             </li>            
           </ul>
         </nav>

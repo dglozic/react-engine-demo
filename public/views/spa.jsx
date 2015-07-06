@@ -11,7 +11,7 @@ module.exports = React.createClass({
   render: function render() {
 
     return (
-      <Layout {...this.props}>
+      <Layout {...this.props} addBundle='true'>
         <Nav {...this.props}/>
         <Router.RouteHandler {...this.props}/>
       </Layout>

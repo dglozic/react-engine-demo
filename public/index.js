@@ -2,7 +2,7 @@
 'use strict';
 
 var Routes = require('./routes.jsx');
-var Client = require('react-engine').client;
+var Client = require('react-engine/lib/client');
 
 // Include all view files. Browerify doesn't do
 // this automatically as it can only operate on
@@ -21,5 +21,6 @@ var options = {
 };
 
 document.addEventListener('DOMContentLoaded', function onLoad() {
+  console.log("Booting the client");
   Client.boot(options);
 });
